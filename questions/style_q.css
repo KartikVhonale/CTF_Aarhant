@@ -51,7 +51,7 @@ body{
   height: auto;
 }
 .time{
-  background-color: pink;
+  /* background-color: pink; */
   width:20%;
 }
 .mainbox{
@@ -119,16 +119,24 @@ body{
   font-weight: 400;
   /* line-height: normal; */
   letter-spacing: 2.8px;
-  margin-top: 2.1%;
+  margin-top: 4.7%;
+  margin-left: 1.2%;
   /* background-color: aquamarine; */
 }
-
 .button_s{
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 15%;
+  margin-top: 9%;
+  margin-left: 1.2%;
   /* background: pink; */
+}
+.link{
+  margin-top: 2.4%;
+  font-size: 129%;
+  margin-left: 1.2%;
+  color: rgb(216, 0, 216);
+  /* background: #000; */
 }
 .textbox{
   height: auto;
@@ -287,4 +295,128 @@ body{
   font-style: normal;
   font-weight: 70;
   line-height: normal;
+}
+
+@media (max-width:760px){
+  .submit_button{
+    background: red;
+  }
+}
+
+
+.countdown {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  /* background-color: red; */
+  gap: 10%;
+  font-family: sans-serif;
+}
+
+.time-section {
+  text-align: center;
+  font-size: 100%;
+  color: rgb(255, 255, 255);
+  /* background-color:purple; */
+}
+
+.time-group {
+  display: flex;
+  gap: 3%;
+  /* background-color: blue; */
+}
+
+.time-segment {
+  display: block;
+  font-size: 100%;
+  font-weight: 900;
+  width: 50%;
+}
+
+.segment-display {
+  position: relative;
+  height: 100%;
+}
+
+.segment-display__top,
+.segment-display__bottom {
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+  height: 51%;
+  position: relative;
+}
+
+.segment-display__top {
+  line-height: 1.5rem;
+  color: #070707;
+  background-color: #ffffff;
+}
+
+.segment-display__bottom {
+  line-height: 0;
+  color: #000000;
+  background-color: #ebebeb;
+}
+
+.segment-overlay {
+  position: absolute;
+  top: 0;
+  perspective: 40%;
+  height: 100%;
+  width: 100%;
+}
+
+.segment-overlay__top,
+.segment-overlay__bottom {
+  position: absolute;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+  height: 50%;
+}
+
+.segment-overlay__top {
+  top: 0;
+  line-height: 1.5;
+  color: #000000;
+  background-color: #ffffff;
+  transform-origin: bottom;
+}
+
+.segment-overlay__bottom {
+  bottom: 0;
+  line-height: 0;
+  color: #000000;
+  background-color: #ffffff;
+  border-top: 0.5px solid rgba(189, 189, 189, 0.055);
+  transform-origin: top;
+}
+
+.segment-overlay.flip .segment-overlay__top {
+  animation: flip-top 0.8s linear;
+}
+
+.segment-overlay.flip .segment-overlay__bottom {
+  animation: flip-bottom 0.8s linear;
+}
+
+@keyframes flip-top {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50%,
+  100% {
+    transform: rotateX(-90deg);
+  }
+}
+
+@keyframes flip-bottom {
+  0%,
+  50% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
 }
